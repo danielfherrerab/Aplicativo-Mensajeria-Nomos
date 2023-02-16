@@ -59,34 +59,25 @@
 				{  
 					while($row = mysqli_fetch_array($result))  {  
 						if(password_verify($password, $row["Clave_usuario"]))  {  
-								$query 		= mysqli_query($conexion,"SELECT * FROM usuarios WHERE correo_usuario = '$username'");
-								
-								
-								if ($row == true) {
-									$Rol					= $row[4];
-									$_SESSION['Id_rol'] = $Rol;
+							$Rol					= $row[4];
+							$_SESSION['Id_rol'] = $Rol;
 
-									switch($Rol) {
-										case 1:
-											echo "<script> window.location.href = 'web/principal_adt.php'; </script>";		break;
-										case 2:
-											echo "<script> window.location.href = 'web/principal_enc.php'; </script>";		break;
-										case 3:
-											echo "<script> window.location.href = 'web/principal_msg.php'; </script>";		break;
-									}
+							switch($Rol) {
+								case 1:
+									echo "<script> window.location.href = 'web/principal_adt.php'; </script>";		break;
+								case 2:
+									echo "<script> window.location.href = 'web/principal_enc.php'; </script>";		break;
+								case 3:
+									echo "<script> window.location.href = 'web/principal_msg.php'; </script>";		break;
+							}
 
-									$id_usuario						= $row[0];
-									$_SESSION['Id_usuario'] 		= $id_usuario;
-									$correo_usuario 				= $row[2];
-									$_SESSION['Correo_usuario'] 	= $correo_usuario;
-									$nombre_usuario 				= $row[1];
-									$_SESSION['Nombre_usuario'] 	= $nombre_usuario;
-									echo $correo_usuario;
-
-								}
-								else{
-									echo "<div class='msg_erroneo'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
-								}
+							$id_usuario						= $row[0];
+							$_SESSION['Id_usuario'] 		= $id_usuario;
+							$correo_usuario 				= $row[2];
+							$_SESSION['Correo_usuario'] 	= $correo_usuario;
+							$nombre_usuario 				= $row[1];
+							$_SESSION['Nombre_usuario'] 	= $nombre_usuario;
+							echo $correo_usuario;
 						}  
 						else  {  
 							echo "<div class='msg_erroneo'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
@@ -100,7 +91,7 @@
 			}
 		?>
         </div>
-				<script src="assets/js/jquery-3.0.0.min.js"></script>
-				<script src="assets/js/loader.js"></script>
+		<script src="assets/js/jquery-3.0.0.min.js"></script>
+		<script src="assets/js/loader.js"></script>
   </body>
 </html>
