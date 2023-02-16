@@ -131,7 +131,7 @@
                     $mensajero = $listar[2];
                     $fec_requerida = $listar[5];
                     $fec_completado = $listar[8];
-                    $mes_hecho 	= date("m",strtotime($fec_completado));
+                    $mes_hecho 	= date("n",strtotime($fec_completado));
                     $dia_hecho 	= date("d",strtotime($fec_completado));
                     $year_hecho 	= date("Y",strtotime($fec_completado));
               ?>
@@ -156,7 +156,7 @@
                 </td>
                 <td><?php echo $descripcion; ?></td>
                 <td><?php echo $mensajero; ?></td>
-                <td><?php echo date("d",strtotime($fec_requerida))." / ".$meses[date("m",strtotime($fec_requerida))]." / ".date("Y",strtotime($fec_requerida)); ?></td>
+                <td><?php echo date("d",strtotime($fec_requerida))." / ".$meses[date("n",strtotime($fec_requerida))]." / ".date("Y",strtotime($fec_requerida)); ?></td>
                   <td><?php echo $dia_hecho." / ".$meses[$mes_hecho]." / ".$year_hecho; ?></td>
               </tr>
               <?php
