@@ -613,14 +613,14 @@
 
             var combo = document.getElementById(id);
             var selected = combo.options[combo.selectedIndex].text;
+            var descripcion = document.getElementById("conf_descripcion"+id).value;
 
             if(selected == "completado"){
-              $("#1_modificar").addClass("show_confirmacion");
+              $("#lista_enc").addClass("show_confirmacion");
               $("#1_reprogramar").removeClass("show_confirmacion");
-              var descripcion = document.getElementById("conf_descripcion"+id).value;
             }
             else{
-              $("#1_modificar").removeClass("show_confirmacion");
+              $("#lista_enc").removeClass("show_confirmacion");
               $("#1_reprogramar").addClass("show_confirmacion");
               $('input[name=repro_id').val(id);
               $('input[name=repro_descripcion').val(descripcion);
@@ -664,7 +664,7 @@
           $("input#foto_opc3").removeClass("foto_opcional");
         });
         function oct_estado(){
-            $(".list_enc").toggleClass("show_confirmacion");
+            $(".list_enc").removeClass("show_confirmacion");
         }
 </script>
 </body>
