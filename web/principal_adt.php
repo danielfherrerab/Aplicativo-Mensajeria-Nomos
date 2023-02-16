@@ -1,14 +1,14 @@
 <?php
   include_once '../bd/conexion.php';
 
-  if(!isset($_SESSION['Id_rol'])){
-    header('location: ../index.php');
-  }
-  else{
+  // if(!isset($_SESSION['Id_rol'])){
+  //   header('location: ../index.php');
+  // }
+  // else{
     if($_SESSION['Id_rol'] !=1){
       header('location: ../index.php');
     }
-  }
+  // }
   $Rol = $_SESSION['Id_rol'];
   $id_usuario = $_SESSION['Id_usuario'];
   $nombre_usuario = $_SESSION['Nombre_usuario'];
