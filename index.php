@@ -72,11 +72,11 @@
 
 									switch($Rol) {
 										case 1:
-											header('Location: web/principal_adt.php');		break;
+											echo '<script> window.location.href = "web/principal_adt.php"; </script>';		break;
 										case 2:
-											header('Location: web/principal_enc.php');			break;
+											echo '<script> window.location.href = "web/principal_enc.php"; </script>';		break;
 										case 3:
-											header('Location: web/principal_msg.php');			break;
+											echo '<script> window.location.href = "web/principal_msg.php"; </script>';		break;
 									}
 
 									$id_usuario						= $arreglofila[0];

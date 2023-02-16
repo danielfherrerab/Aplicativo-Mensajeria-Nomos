@@ -56,7 +56,6 @@
     <script src="../assets/js/jquery.min.js"></script>
 
     <script src="../assets/js/jquery-3.0.0.min.js"></script>
-    <script src="../assets/js/loader.js"></script>
   </head>
 
   <body>
@@ -434,7 +433,7 @@
     <script type="text/javascript" src="../assets/js/fullcalendar.min.js"></script>
     <script src="../assets/js/es.js"></script>
     <script src="../assets/js/app.js"></script>
-    
+    <script src="../assets/js/loader.js"></script>
     
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.8/sortable.min.js"></script>

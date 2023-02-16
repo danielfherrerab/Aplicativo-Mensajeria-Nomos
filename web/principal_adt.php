@@ -52,7 +52,6 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/fullcalendar.css">
     <link rel="stylesheet" href="../assets/css/carrusel.css">
     <link rel="stylesheet" type="text/css" href="extensiones/TablaAdvance/css/dataTables.jqueryui.css"/>
-    <script src="../assets/js/loader.js"></script>
     <title>Administrador</title>
 </head>
 
@@ -444,7 +443,7 @@
 <script type="text/javascript" src="../assets/js/fullcalendar.min.js"></script>
 <script src="../assets/js/es.js"></script>
 <script src="extensiones/TablaAdvance/js/jquery.dataTables.js"></script>
-
+<script src="../assets/js/loader.js"></script>
 <script src="../assets/js/app.js"></script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.8/sortable.min.js"></script>
