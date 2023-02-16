@@ -2,8 +2,8 @@
   include_once '../bd/conexion.php';
   session_start();
   $Rol = $_SESSION['Id_rol'];
-  if(!isset($_SESSION['Id_rol'])){
-    header('location: ../index.php');
+  if(!$_SESSION){
+		header('location: ../index.php');
   }
   else {
     if ($_SESSION['Id_rol'] == 3) {

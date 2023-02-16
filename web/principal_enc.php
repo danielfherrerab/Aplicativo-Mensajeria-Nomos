@@ -2,7 +2,9 @@
   include_once '../bd/conexion.php';
 
   session_start();
-
+  if(!$_SESSION){
+    header('location: ../index.php');
+  }
   if($_SESSION['Id_rol'] !=2){
     header('location: ../index.php');
   }
