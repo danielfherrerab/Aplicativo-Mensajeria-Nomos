@@ -202,7 +202,7 @@
                               $observacion = $listar[6];
                               $foto_encargo = $listar[7];
                               $fec_completado = $listar[9];
-                              $mes_reali 	= date("m",strtotime($fec_completado));
+                              $mes_reali 	= date("n",strtotime($fec_completado));
                               $dia_reali 	= date("d",strtotime($fec_completado));
                               $year_reali 	= date("Y",strtotime($fec_completado));
                               ?>
@@ -262,7 +262,7 @@
                       $descripcion = $listar[3];
                       $mensajero = $listar[2];
                       $fec_requerida = $listar[5];
-                      $mes_reali 	= date("m",strtotime($fec_requerida));
+                      $mes_reali 	= date("n",strtotime($fec_requerida));
                       $dia_reali 	= date("d",strtotime($fec_requerida));
                       $year_reali 	= date("Y",strtotime($fec_requerida));
                 ?>
