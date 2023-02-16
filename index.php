@@ -72,11 +72,11 @@
 
 									switch($Rol) {
 										case 1:
-											echo '<script> window.location.href = "web/principal_adt.php"; </script>';		break;
+											echo "<script> window.location.href = 'web/principal_adt.php'; </script>";		break;
 										case 2:
-											echo '<script> window.location.href = "web/principal_enc.php"; </script>';		break;
+											echo "<script> window.location.href = 'web/principal_enc.php'; </script>";		break;
 										case 3:
-											echo '<script> window.location.href = "web/principal_msg.php"; </script>';		break;
+											echo "<script> window.location.href = 'web/principal_msg.php'; </script>";		break;
 									}
 
 									$id_usuario						= $row[0];
