@@ -1,10 +1,11 @@
 <?php
-	$BD_HOST = $_ENV['BD_HOST'];
-	$BD_NAME = $_ENV['BD_NAME'];
-	$BD_PASSWORD = $_ENV['BD_PASSWORD'];
-	$BD_PORT = $_ENV['BD_PORT'];
-	$BD_USER = $_ENV['BD_USER'];
+	$DB_HOST = $_ENV['DB_HOST'];
+	$DB_USER = $_ENV['DB_USER'];
+	$DB_PASSWORD = $_ENV['DB_PASSWORD'];
+	$DB_NAME = $_ENV['DB_NAME'];
+	$DB_PORT = $_ENV['DB_PORT'];
 
+	$conexion=mysqli_connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME,$DB_PORT);
 	class Conexion extends mysqli {
 
 		public function __construct() {
@@ -17,5 +18,4 @@
 		}
 
 	}
-  $conexion=mysqli_connect($BD_HOST,$BD_USER,$BD_PASSWORD,$BD_NAME) or die ('problemas en la conexion');
 ?>
