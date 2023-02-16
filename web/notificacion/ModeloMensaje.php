@@ -1,20 +1,15 @@
 <?php
-	$DB_HOST = $_ENV['DB_HOST'];
-	$DB_USER = $_ENV['DB_USER'];
-	$DB_PASSWORD = $_ENV['DB_PASSWORD'];
-	$DB_NAME = $_ENV['DB_NAME'];
-	$DB_PORT = $_ENV['DB_PORT'];
 
 class ModeloMensaje  {
 
   public function conectar_bd()
   {
-    $servername = $DB_HOST;
-    $username = $DB_USER;
-    $password = $DB_PASSWORD;
-    $dbname = $DB_NAME;
+    $servername = $_ENV['DB_HOST'];
+    $username = $_ENV['DB_USER'];
+    $password = $_ENV['DB_PASSWORD'];
+    $dbname = $_ENV['DB_NAME'];
     /* crear la conexión */
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname, $_ENV['DB_PORT']);
     /* comprobar la conexión */
     if ($conn->connect_error) {
         die("Falló la conexión:: " . $conn->connect_error);
