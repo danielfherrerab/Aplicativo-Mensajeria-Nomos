@@ -38,8 +38,6 @@
   $resulEventos = mysqli_query($conexion, $SqlEventos);  
 
 
-
-  $tareas = (new Tarea())->getTareas();
 ?>
 <!doctype html>
 <html lang="es">
