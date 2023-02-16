@@ -55,8 +55,7 @@
 				$query = "SELECT * FROM usuarios WHERE correo_usuario = '$username'";  
 				$result = mysqli_query($conexion, $query); 
 
-				if(mysqli_num_rows($result) >= 1)  
-				{  
+				if(mysqli_num_rows($result) >= 1) {  
 					while($row = mysqli_fetch_array($result))  {  
 						if(password_verify($password, $row["Clave_usuario"]))  {  
 							$Rol					= $row[4];
@@ -77,7 +76,6 @@
 							$_SESSION['Correo_usuario'] 	= $correo_usuario;
 							$nombre_usuario 				= $row[1];
 							$_SESSION['Nombre_usuario'] 	= $nombre_usuario;
-							echo $correo_usuario;
 						}  
 						else  {  
 							echo "<div class='msg_erroneo'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
