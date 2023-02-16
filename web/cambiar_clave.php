@@ -4,10 +4,6 @@
 	if(!$_SESSION){
 	header('location: index.php');
 	}
-	if(!isset($_SESSION['correo'])){
-		header('location: index.php');
-	}
-	
 	$correo_usuario = $_SESSION['correo'];
 ?>
 <!DOCTYPE html>
