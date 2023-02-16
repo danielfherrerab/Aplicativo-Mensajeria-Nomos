@@ -21,23 +21,25 @@
   $solofecha_hoy      = date("Y-m-d");
   $fecha_despues 	= date("Y-m-d 23:59:59",strtotime($fecha_hoy."+ 1 day,"));
 
-  // if(isset($_GET['encarg'])) {
-  //   $num_enc = $_GET['encarg'];
-  //   $cam__estado = $_GET['est'];
-  //   $rectificar = mysqli_query($conexion,"UPDATE encargos set estado = '$cam__estado',fecha_completado = '$fecha_hoy' where id_encargo = $num_enc");
+  if(isset($_GET['encarg'])) {
+    $num_enc = $_GET['encarg'];
+    $cam__estado = $_GET['est'];
+    $rectificar = mysqli_query($conexion,"UPDATE encargos set estado = '$cam__estado',fecha_completado = '$fecha_hoy' where id_encargo = $num_enc");
 
-  //   if($rectificar){
-  //     echo "<script> alert('Se cambio de estado'); window.location.href ='principal_adt.php'; </script>";
-  //   }
-  // }
+    if($rectificar){
+      echo "<script> alert('Se cambio de estado'); window.location.href ='principal_adt.php'; </script>";
+    }
+  }
   if(isset($_GET['registrado'])) {
     echo "<div class='registrado'>Se ha registrado correctamente </div>";
   }
   $SqlEventos   = ("SELECT * FROM encargos inner join usuarios on usuarios.id_usuario = encargos.Id_mensajero");
   $resulEventos = mysqli_query($conexion, $SqlEventos);  
 
+  require_once('extensiones/app/Database.php');
+  require_once('extensiones/app/Tarea.php');
 
-
+  $tareas = (new Tarea())->getTareas();
 ?>
 <!doctype html>
 <html lang="es">

@@ -32,4 +32,8 @@
 			return $this->db;
 		}
 
+		public function closeConnection() {
+			$this->db->close();
+		}
+
 	}

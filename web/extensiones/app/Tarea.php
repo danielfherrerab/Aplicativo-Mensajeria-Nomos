@@ -6,6 +6,10 @@ class Tarea extends Database{
 		parent::__construct();
 	}
 
+	public function __destruct() {
+		$this->closeConnection();
+	}
+
 	public function getTareas() {
 		$Rol = $_SESSION['Id_rol'];
 		$id_usuario = $_SESSION['Id_usuario'];
