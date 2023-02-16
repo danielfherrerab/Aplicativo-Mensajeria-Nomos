@@ -1,13 +1,8 @@
 <?php
   include_once '../bd/conexion.php';
   session_start();
-  if(!isset($_SESSION['Id_rol'])){
+  if($_SESSION['Id_rol'] !=3){
     header('location: ../index.php');
-  }
-  else{
-    if($_SESSION['Id_rol'] !=3){
-      header('location: ../index.php');
-    }
   }
   $i = 0;
   $Rol = $_SESSION['Id_rol'];

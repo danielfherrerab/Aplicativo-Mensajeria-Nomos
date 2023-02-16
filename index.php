@@ -59,10 +59,6 @@
 				{  
 					while($row = mysqli_fetch_array($result))  {  
 						if(password_verify($password, $row["Clave_usuario"]))  {  
-							if (isset($_POST['correo_usuario']) && isset($_POST['clave_usuario'])) {
-								$username = $_POST['correo_usuario'];
-								$password = $_POST['clave_usuario'];
-								
 								$query 		= mysqli_query($conexion,"SELECT * FROM usuarios WHERE correo_usuario = '$username'");
 								
 								
@@ -91,7 +87,6 @@
 								else{
 									echo "<div class='msg_erroneo'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
 								}
-							}
 						}  
 						else  {  
 							echo "<div class='msg_erroneo'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";

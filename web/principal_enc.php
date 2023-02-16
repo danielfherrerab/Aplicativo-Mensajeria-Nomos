@@ -3,13 +3,8 @@
 
   session_start();
 
-  if(!isset($_SESSION['Id_rol'])){
+  if($_SESSION['Id_rol'] !=2){
     header('location: ../index.php');
-  }
-  else{
-    if($_SESSION['Id_rol'] != 2){
-      header('location: ../index.php');
-    }
   }
   $Rol = $_SESSION['Id_rol'];
   $id_usuario = $_SESSION['Id_usuario'];
