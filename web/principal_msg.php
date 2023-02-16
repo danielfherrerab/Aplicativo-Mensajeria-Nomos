@@ -51,6 +51,7 @@
       <link rel="stylesheet" type="text/css" href="../assets/css/fullcalendar.css">
       <title>Mensajero</title>
       <script src="../assets/js/jquery.min.js"></script>
+      <script src="../assets/js/loader.js"></script>
   </head>
   <body>
 		<div class="loading" id="loading"><div class="cargador"></div></div>
@@ -316,7 +317,6 @@
     <script type="text/javascript" src="../assets/js/fullcalendar.min.js"></script>
     <script src="../assets/js/es.js"></script>
     <script src="../assets/js/app.js"></script>
-  <script src="../assets/js/loader.js"></script>
     <script>
       function myFunction(){
   const el = document.querySelector('#loading');
