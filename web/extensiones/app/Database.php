@@ -1,17 +1,10 @@
 <?php
 
 	class Database {
-
-		public $DB_HOST;
-		public $DB_USER;
-		public $DB_PASSWORD;
-		public $DB_NAME;
-		public $DB_PORT;
-
 		private $db;
 
 		public function __construct () {
-			$this->db = new mysqli($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME);
+			$this->db = new mysqli($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME']);
 		}
 
 		public function query($sql) {
