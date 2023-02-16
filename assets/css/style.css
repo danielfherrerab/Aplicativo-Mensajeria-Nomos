@@ -1,0 +1,1079 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    background: #e1ecf2;
+}
+input,button,textarea{
+    border-radius: 5px;
+    background: none;
+    border: none;
+    width: 100%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    outline: none;
+    color: black;
+    cursor: pointer;
+    text-indent: 10px;
+}
+input:focus,button:focus,textarea:focus{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 10px inset;
+}
+input:hover,button:hover,textarea:hover{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 20px inset;
+}
+input[type="submit"]{
+    background-color: rgb(0, 195, 171);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    font-weight: bold;
+    text-indent: 0px;
+}
+input[type="submit"]:hover{
+    background-color: rgba(0, 195, 171, 0.78);
+    box-shadow: rgba(0, 0, 0, 0.23) 0px -50px 36px -28px inset;
+}
+select {
+    padding: 5px;
+    outline: none;
+    background: none;
+    border: none;
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
+    border-radius: 10px;
+    background-color: rgba(182, 186, 192, 0.48);
+}
+select option:nth-of-type(odd){
+    background-color: rgba(182, 186, 192, 0.3)
+}
+select option[selected]{
+    background-color: rgba(0, 0, 0, 0.34);
+}
+.pendiente{
+    background-color: rgba(255, 201, 36, 0.2);
+}
+.completado{
+    background-color: rgba(149, 255, 36, 0.2);
+}
+.reprogramado{
+    background-color: rgba(255, 76, 36, 0.2);
+}
+select option{
+    background-color: rgba(129, 129, 130, 0);
+}
+
+*::-webkit-scrollbar{
+    height: 10px;
+    width: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 20px inset;
+}
+*::-webkit-scrollbar-thumb{
+    background: linear-gradient(to top, #667d9f, #5e6d80);
+    border-radius: 10px;
+}
+
+
+/* PARA LOGO SUPERIOR DE INICIO DE SESION */
+.logo_superior{
+    background-image: url("../images/LOGO.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: static;
+    margin: 20px;
+}
+
+/* PARA CUADRO DE INICIO DE SESION */
+.inicio_sesion{
+    width: 75%;
+    max-width: 500px;
+    margin: auto auto;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -26px 60px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 20px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.inicio_sesion input{
+    padding: 10px 0px;
+}
+.inicio_sesion h1{
+    text-align: center;
+    text-shadow: 0px 5px 6px rgba(0, 0, 0, 0.74);
+    padding: 10px;
+}
+.inicio_sesion h1{
+    text-align: center;
+    text-shadow: 0px 5px 6px rgba(0, 0, 0, 0.74);
+}
+.inicio_sesion fieldset{
+    border-radius: 15px 15px 20px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.17);
+    padding: 15px;
+}
+.inicio_sesion fieldset *{
+    margin: 10px auto;
+}
+.inicio_sesion .msg_erroneo{
+    margin: 10px 5px;
+    color: crimson;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* PARA PAGINA PRINCIPAL */
+.contenedor_mayor{
+    margin: 5px;
+}
+.contenedor_mayor .nav_superior{
+    width: calc(100% - 10px);
+    height: 60px;
+    display: flex;
+    position: fixed;
+    top: 5px;
+    z-index: 100;
+}
+
+.contenedor_mayor .nav_superior .hamburger{
+    width: 70px;
+    height: 100%;
+    background: rgba(46, 67, 173, 0.63);
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -26px 60px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 20px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    padding: 15px 17px;
+    border-top-left-radius: 10px;
+    cursor: pointer;
+}
+
+.contenedor_mayor .nav_superior .hamburger div{
+    width: 35px;
+    height: 4px;
+    background: #92a6e2;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.contenedor_mayor .nav_superior .top_menu{
+    width: calc(100% - 70px);
+    height: 100%;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.08) 0px -26px 60px 0px inset, rgba(0, 0, 0, 0.06) 0px -79px 40px 20px inset, rgba(0, 0, 0, 0.04) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.contenedor_mayor .nav_superior .top_menu .logo{
+    color: #2e4ead;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.contenedor_mayor .nav_superior .top_menu ul{
+    display: flex;
+}
+
+.contenedor_mayor .nav_superior .top_menu ul li a{
+    display: block;
+    margin: 0 10px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #2e4ead;
+    border-radius: 50%;
+    color: #2e4ead;
+}
+
+.contenedor_mayor .nav_superior .top_menu ul li a:hover{
+    background: #4360b5;
+    color: #fff;
+}
+
+.contenedor_mayor .nav_superior .top_menu ul li:hover .notificacion{
+    background-color: rgb(201, 50, 50);
+    box-shadow: inset 0px -12px 9px -14px rgba(0,0,0,0.2);
+}
+
+.contenedor_mayor .nav_superior .top_menu ul li a:hover i{
+    color: #fff;
+}
+
+.contenedor_mayor .nav_lateral{
+    position: fixed;
+    top: 65px;
+    left: 5px;
+    background: rgba(46, 78, 173, 0.63);
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -26px 60px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 20px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    width: 200px;
+    height: 30%;
+    border-bottom-left-radius: 10px;
+    transition: all 0.3s ease;
+    display: initial;
+}
+
+.contenedor_mayor .nav_lateral ul li a{
+    display: block;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+    margin-bottom: 1px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.contenedor_mayor .nav_lateral ul li a:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: #92a6e2;
+    display: none;
+}
+
+.contenedor_mayor .nav_lateral ul li a span.icon{
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.contenedor_mayor .nav_lateral ul li a span.title{
+    display: inline-block;
+}
+
+.contenedor_mayor .nav_lateral ul li a:hover,
+.contenedor_mayor .nav_lateral ul li a.active{
+    background: #4360b5;
+    color: #fff;
+}
+
+.contenedor_mayor .nav_lateral ul li a:hover:before,
+.contenedor_mayor .nav_lateral ul li a.active:before{
+    display: block;
+}
+
+.contenedor_mayor .main_container{
+    width: (100% - 200px);
+    margin-top: 70px;
+    margin-left: 200px;
+    padding: 25px 10px;
+    transition: all 0.3s ease;
+}
+
+.contenedor_mayor .main_container .item{
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.contenedor_mayor.collapse .nav_lateral{
+    width: 70px;
+    display: none;
+}
+
+.contenedor_mayor.collapse .nav_lateral ul li a{
+    text-align: center;transition: ease-in-out 5s;
+}
+
+.contenedor_mayor.collapse .nav_lateral ul li a span.icon{
+    margin: 0;transition: ease-in-out 5s;
+}
+
+.contenedor_mayor.collapse .nav_lateral ul li a span.title{
+    display: none;transition: ease-in-out 5s;
+}
+.contenedor_mayor.collapse .btn-cierre{
+    transition: ease-in-out 1s;
+    left: 95px;
+}
+
+
+.contenedor_mayor.collapse .main_container{
+    margin-left: 0px;
+}
+.contenedor_mayor.collapse .users_container{
+    margin-left: 0px;
+}
+.notificacion{
+    background-color: rgb(255, 103, 103);
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(30px,-38px);
+    padding: 0px 6px;
+    box-shadow: 0 0 5px rgba(255, 103, 103, 0.7), 0 0 5px rgba(255, 103, 103, 0.7), 0 0 15px rgba(255, 103, 103, 0.7), 0 0 15px rgba(255, 103, 103, 0.7);
+}
+
+
+
+/* PARA CONTENIDO PRINCIPAL DE INICIO */
+
+.main_container {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+
+    grid-template-areas: "lista_calendario lista_encargos lista_encargos lista_prioridades"
+                         "lista_calendario lista_encargos lista_encargos registrar_encargos";
+}
+
+.main_container .lista_encargos {
+    grid-area: lista_encargos;
+    background: none;
+    border: solid 1px #fff;
+    margin-bottom: 50px;
+    border-left: 1px solid rgba(93, 93, 93, 0.38);
+    border-right: 1px solid rgba(93, 93, 93, 0.38);
+}
+.main_container .lista_encargos .encabezado_lista,.registrar_encargos .encabezado_lista{
+    background: none;
+    border-bottom: solid 2px #2e4ead;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.08) 0px -26px 60px 0px inset, rgba(0, 0, 0, 0.06) 0px -79px 40px 20px inset, rgba(0, 0, 0, 0.04) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.main_container .lista_encargos .encabezado_lista .contenido_lista,.registrar_encargos .encabezado_lista .contenido_lista{
+    background-color: #2e4ead;
+    max-width: 100%;
+    max-height: 1000px;
+    overflow: auto;
+}
+.main_container .encabezado_lista {
+    background: none;
+    border-bottom: solid 2px #2e4ead;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.08) 0px -26px 60px 0px inset, rgba(0, 0, 0, 0.06) 0px -79px 40px 20px inset, rgba(0, 0, 0, 0.04) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.main_container .lista_calendario {
+    padding: 5px;
+    background-color: rgba(225, 225, 225, 0.80);
+    grid-area: lista_calendario;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.main_container .lista_prioridades {
+    background-color: rgba(225, 225, 225, 0.80);
+    padding: 10px;
+    grid-area: lista_prioridades;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.main_container .registrar_encargos {
+    grid-area: registrar_encargos;
+    width: auto;
+}
+.contenido_lista{
+    max-width: 100%;
+    overflow: auto;
+}
+.contenido_lista .tabla_encargos{
+    width: 100%;
+}
+.contenido_lista .tabla_encargos th{
+    border-bottom: 2px solid #2e4ead;
+}
+.contenido_lista .tabla_encargos td[colspan]{
+    text-align: center;
+}
+
+.contenido_lista button{
+    background-color: rgb(0, 195, 171);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    width: 30%;
+    max-width: 200px;
+    min-height: 2%;
+    padding: 1% 5px;
+    margin: 20px auto;
+    text-indent: -10px;
+    text-align: center;
+    margin-left: 10px;
+    background: none;
+}
+.footer {
+    background: #3d62a9;
+    color: #fff;
+    padding: 10px;
+    width: calc(100% - 10px);
+    height: auto;
+    position: relative;
+    bottom: 0;
+    margin-top: 100px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.08) 0px -26px 60px 0px inset, rgba(0, 0, 0, 0.06) 0px -79px 40px 20px inset, rgba(0, 0, 0, 0.04) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    z-index: 0;
+    border-radius: 0px 0px 10px 10px;
+    font-size: 15px;
+}
+.footer p{
+    margin-bottom: 10px;
+}
+
+.contenido_lista fieldset{
+    border-radius: 15px 15px 20px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.17);
+    padding: 15px;
+    margin: 15px 15px;
+}
+.contenido_lista fieldset *{
+    margin: 5px 5px;
+}
+.contenido_lista textarea{
+    min-width: 90%;
+    max-width: max-content;
+    min-height: 30px;
+    max-height: 100px;
+}
+.contenido_lista input[type="datetime-local"]{
+    padding: 10px;
+}
+.contenido_lista input[type="submit"]{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    padding: 10px 0;
+    background: none;
+    border: 3px solid rgba(46, 67, 173, 0.63);
+}
+
+
+/* PARA ACCION DE DIVISION DE PANTALLA */
+.two_container {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+
+    grid-template-areas: "lista_calendario lista_encargos lista_encargos registrar_encargos"
+                         "lista_calendario lista_encargos lista_encargos lista_prioridades";
+}
+.registrar_encargos{
+    display: none;
+}
+.show_registrar{
+    display: inline-block;
+}
+
+
+/* PARA MOSTRAR O ELIMINAR ENCARGOS DE VISTA */
+.lista_realizados{
+    display: none;
+}
+.lista_completa{
+    position: sticky;
+    display: none;
+}
+.list_enc{
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(182, 182, 182, 0.62);
+}
+.list_enc .lista_encargos{
+    background-color: rgb(227, 227, 227);
+    width: 90%;
+    max-width: 500px;
+    padding: 5px;
+}
+.list_enc .lista_encargos .encabezado_lista {
+    background: none;
+    border-bottom: solid 2px #2e4ead;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.08) 0px -26px 60px 0px inset, rgba(0, 0, 0, 0.06) 0px -79px 40px 20px inset, rgba(0, 0, 0, 0.04) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.list_enc .lista_encargos .close{
+    background-color: rgba(211, 51, 51, 0.86);
+    padding: 5px 10px;
+}
+.list_enc textarea{
+    min-width: 95%;
+    max-width: 450px;
+    min-height: 100px;
+    max-height: 250px;
+}
+.list_enc fieldset{
+    padding: 3px;
+    margin: 5px 15px;
+    border-radius: 5px;
+}
+.list_enc input{
+    width: auto;
+    padding: 5px;
+}
+.list_enc input[type="file"]{
+    max-width: 180px;
+}
+.show_confirmacion{
+    z-index: 200;
+    position: fixed;
+    display: flex;
+}
+.show_tablas{
+    display: block;
+    position: sticky;
+}
+
+
+/* PARA CALENDARIO DE ENCARGOS */
+.lista_calendario input,button{
+    width: auto;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    text-indent: 0;
+}
+.closeon img{
+    display: none;
+}
+
+
+/* PARA PAGINA DE ENCARGOS */
+.contenedor_mayor .container_encargos{
+    width: (100% - 200px);
+    margin-top: 70px;
+    padding: 25px 10px;
+    transition: all 0.3s ease;
+}
+.container_encargos {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+
+    grid-template-areas: "por_realizar por_realizar realizados realizados"
+                         "encargos_totales encargos_totales encargos_totales modificar_encargos";
+}
+.container_encargos .por_realizar {
+    grid-area: por_realizar;
+}
+.container_encargos .encargos_totales {
+    grid-area: encargos_totales;
+}
+.container_encargos .modificar_encargos {
+    grid-area: modificar_encargos;
+}
+.container_encargos .realizados {
+    grid-area: realizados;
+}
+.container_encargos .calendario {
+    grid-area: calendario;
+}
+.container_encargos .por_realizar,.realizados,.encargos_totales,.modificar_encargos{
+    background: none;
+    border: solid 1px #fff;
+    margin-bottom: 50px;
+    border-left: 1px solid rgba(93, 93, 93, 0.38);
+    border-right: 1px solid rgba(93, 93, 93, 0.38);
+}
+.container_encargos .por_realizar,.realizados,.encargos_totales,.modificar_encargos{
+    background: none;
+    border-bottom: solid 2px #2e4ead;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.08) 0px -26px 60px 0px inset, rgba(0, 0, 0, 0.06) 0px -79px 40px 20px inset, rgba(0, 0, 0, 0.04) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.main_container .por_realizar .encabezado_lista,.realizados .encabezado_lista,.encargos_totales .encabezado_lista,.modificar_encargos .encabezado_lista{
+    background: none;
+    border-bottom: solid 2px #2e4ead;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.08) 0px -26px 60px 0px inset, rgba(0, 0, 0, 0.06) 0px -79px 40px 20px inset, rgba(0, 0, 0, 0.04) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.container_encargos .por_realizar .contenido_lista,.realizados .contenido_lista,.encargos_totales .contenido_lista,.modificar_encargos .contenido_lista{
+    max-height: 1000px;
+    overflow: auto;
+}
+.contenido_lista{
+    overflow: auto;
+}
+.container_encargos .tabla_encargos{
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+}
+.container_encargos .tabla_encargos th{
+    border-bottom: 2px solid #2e4ead;
+}
+.container_encargos .tabla_encargos td{
+    border-right: 2px solid rgba(203, 208, 224, 0.78);
+}
+.container_encargos .tabla_encargos td[colspan]{
+    text-align: center;
+}
+.container_encargos button{
+    width: auto;
+    padding: 5px 13px;
+    text-align: center;
+}
+
+.realizados td section{
+    left: 0;
+    top: 0;
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #525252;
+    z-index: 20;
+}
+.realizados img{
+    width: 100%;
+    max-height: 100%;
+}
+.realizados .close{
+    justify-content: center;
+    text-align: center;
+    padding: 25px 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 101;
+    background-color: rgba(196, 196, 196, 0.7);
+    text-indent: -3px;
+    font-size: 15px;
+}
+.realizados .close:hover{
+    background-color: rgba(217, 217, 217, 0.7);
+    color: white;
+}
+.justify{
+    text-align: justify;
+    align-content: center;
+    align-items: center;
+}
+.justify button{
+    margin: 0 5px 0 5px;
+    text-indent: 0;
+}
+
+
+/* ACCION PARA MOSTRAR FOTO DE ENCARGOS */
+
+
+
+/* PARA MOSTRAR ENCARGO DE CALENDARIO*/
+.modal{
+    background-color: rgba(185, 185, 185, 0.93);
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    clip-path: circle(0% at 50% 50%);
+    transition: all 0.5s;
+}
+.modal .close{
+    background-color: rgba(211, 51, 51, 0.78);
+    padding: 10px;
+    position: unset;
+    left: 0;
+    transform: translate(-50%,-60px);
+}
+.show_modal{
+    transition: all 0.5s;
+    background-color: rgba(157, 157, 157, 0.67);
+    padding: 50px;
+    z-index: 100;
+    clip-path: circle(100% at 50% 50%);
+}
+.modal .modal-header{
+    background-color: #d7d7d7;
+    padding: 5px;
+    border-bottom: 2px solid #3a87ad;
+    max-height: 50px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -26px 60px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 20px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.modal .modal_content{
+    padding: 5px;
+    background-color: #d2d2d2;
+    width: 70%;
+    max-width: 600px;
+    max-height: 700px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 10px inset;
+}
+.modal .modal_content *{
+    padding: 5px;
+    margin: 5px 3px;
+}
+.modal .modal_content .control{
+    max-width: 98%;
+    max-height: 250px;
+    min-width: 90%;
+    min-height: 100px;
+}
+.modal .modal_content input{
+    max-width: 50%;
+}
+
+
+
+
+/* PARA CALENDARIO Y TABLAS DE ENCARGOS DE MENSAJERO */
+.msg_calendario {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+
+    grid-template-areas: "por_realizar por_realizar realizados realizados"
+                         "encargos_totales encargos_totales encargos_totales modificar_encargos";
+}
+
+
+/* PARA TABLA DE NOTIFICACION DEL MENSAJERO */
+.tabla_notificacion{
+    position: fixed;
+    top: 10%;
+    left: 2.4%;
+    width: 95%;
+    max-width: 600px;
+    height: auto;
+    margin: auto;
+    background-color: rgba(138, 138, 138, 0.96);
+    clip-path: inset(0 100% 0 0);
+    transition: ease-in-out 1.5s;
+}
+.mostrar_notificacion{
+    display: flex;
+    justify-content: center;
+    z-index: 120;
+    clip-path: inset(0 0 0 0);
+    transition: ease-in-out 1.5s;
+}
+.tabla_notificacion .tabla_encargos{
+    background-color: #c9c9c9;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+}
+.tabla_notificacion .tabla_encargos th{
+    border-bottom: 2px solid #2e4ead;
+}
+.tabla_notificacion .tabla_encargos td{
+    border-right: 2px solid rgba(219, 222, 231, 0.78);
+}
+.tabla_notificacion .tabla_encargos td[colspan]{
+    text-align: center;
+}
+
+/* PARA ICONO DE OCULTAR NOTIFICACION */
+
+.tabla_notificacion .space_btn_oct{
+    width: 200px;
+    height: 80px;
+    max-height: 80px;
+    z-index: 100;
+    margin: auto;
+    cursor: pointer;
+}
+.tabla_notificacion .space_btn_oct:hover{
+    background-color: #c2c2c2;
+}
+.tabla_notificacion .icono_ocultar{
+    left: 2.4%;
+    width: 95%;
+    margin: auto;
+    height: 80px;
+    background-image: url("../images/top_flecha.png");
+    padding: 5px;
+    background-size: 80px;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+}
+
+
+
+/* PARA LISTA DE PRIORIDADES MODIFICABLES */
+.lista_prioridades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tareas {
+    max-width: 800px;
+    width: 100%;
+    list-style: none;
+}
+.tareas .tarea {
+    width: 100%;
+    text-align: left;
+    color: #000;
+    background-color: #fff;
+    padding: 15px 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+
+/* PARA BOTONES DE SUBIR FOTO OPCIONAL EN CAMBIO DE ESTADO */
+#lista_enc .foto_opcional {
+    text-indent: 0;
+    max-width: auto;
+    padding: 0 10px;
+    border-radius: 50%;
+    padding: 5px 8px;
+    border: #3a87ad solid 1px;
+    font-weight: bolder;
+    font-size: 17px;
+}
+#lista_enc input[type="button"] {
+    text-indent: 0;
+}
+
+
+
+
+/* PARA PAGINA DE USUARIOS DEL ADMIN */
+.contenedor_mayor .users_container{
+    width: (100% - 200px);
+    margin-top: 70px;
+    margin-left: 200px;
+    padding: 25px 10px;
+    transition: all 0.3s ease;
+}
+.contenedor_mayor .users_container {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+
+    grid-template-areas: "lista_usuarios lista_usuarios lista_usuarios agregar_usuario"
+                         "lista_usuarios lista_usuarios lista_usuarios asignar_mensajero";
+}
+
+.contenedor_mayor .users_container .lista_usuarios {
+    grid-area: lista_usuarios;
+    background: none;
+    border: solid 1px #fff;
+    margin-bottom: 50px;
+}
+
+.contenedor_mayor .users_container .agregar_usuario {
+    grid-area: agregar_usuario;
+}
+.contenedor_mayor .users_container .modificar_usuarios {
+    grid-area: modificar_usuarios;
+    display: none;   
+}
+.contenedor_mayor .users_container .asignar_mensajero {
+    grid-area: asignar_mensajero;
+    display: none;   
+}
+.contenedor_mayor .users_container .close{
+    background-color: rgba(211, 51, 51, 0.78);
+    padding: 10px;
+    position: unset;
+    left: 0;
+}
+.contenedor_mayor .users_container .lista_usuarios .encabezado_lista,.agregar_usuario .encabezado_lista{
+    background: none;
+    border-bottom: solid 2px #2e4ead;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.08) 0px -26px 60px 0px inset, rgba(0, 0, 0, 0.06) 0px -79px 40px 20px inset, rgba(0, 0, 0, 0.04) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.contenedor_mayor .users_container .lista_usuarios .encabezado_lista .contenido_lista,.agregar_usuario .encabezado_lista .contenido_lista{
+    background-color: #2e4ead;
+    max-width: 100%;
+    max-height: 1000px;
+    overflow: auto;
+}
+.contenedor_mayor .users_container .encabezado_lista {
+    background: none;
+    border-bottom: solid 2px #2e4ead;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.08) 0px -26px 60px 0px inset, rgba(0, 0, 0, 0.06) 0px -79px 40px 20px inset, rgba(0, 0, 0, 0.04) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+/* .users_container .modificar_usuarios {
+    background-color: rgba(225, 225, 225, 0.80);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+} */
+.contenedor_mayor .users_container input[type="button"]{
+    text-indent: 0;
+    padding: 5px;
+}
+.contenedor_mayor .users_container input[type="text"]{
+    max-width: 300px;
+    height: auto;
+}
+.contenedor_mayor .users_container input[type="password"]{
+    padding: 5px;
+}
+.contenedor_mayor .users_container input[type="submit"]{
+    width: 80%;
+}
+
+
+
+.contenedor_mayor .users_modificar {
+    grid-template-areas: "modificar_usuarios lista_usuarios lista_usuarios agregar_usuario"
+                         "modificar_usuarios lista_usuarios lista_usuarios asignar_mensajero";
+}
+.contenedor_mayor .users_modificar .modificar_usuarios{
+    display: block;
+}
+
+
+.contenedor_mayor .mostrar_asignacion {
+    grid-template-areas: "lista_usuarios lista_usuarios lista_usuarios asignar_mensajero"
+                         "lista_usuarios lista_usuarios lista_usuarios agregar_usuario";
+}
+.contenedor_mayor .mostrar_asignacion .asignar_mensajero{
+    display: block;
+}
+
+
+
+
+/* LOADER DE PRECARGA */
+
+.loading{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #e7e7e7;
+    transition: ease-in-out 1s;
+    opacity: 1;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+ .loading2{
+	z-index: -10;
+    transition: ease-in-out 1s;
+    opacity: 0;
+}
+.cargador {
+    width: 90%;
+    max-width: 290px;
+    height: 80px;
+    background-image: url("../images/one.svg");
+}
+      
+
+/* MENSAJE DE REGISTRO CORRECTO */
+.registrado{
+    position: fixed;
+    top: 180px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #a4b2c5;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 10px inset;
+    z-index: 100;
+    position: fixed;
+    width: 250px;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+    animation: msg_registrado 15s ease;
+    font-weight: bolder;
+    clip-path: inset(0 100% 0 0);
+}
+@keyframes msg_registrado {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  10% {
+    clip-path: inset(0 0 0 0);
+  }
+  90% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 100% 0);
+  }
+}
+/* ADAPTADOR DE PANTALLA */
+@media screen and (max-width: 1000px){
+    .main_container {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+
+        grid-template-areas: "lista_encargos lista_encargos"
+                            "lista_calendario lista_calendario"
+                            "lista_prioridades lista_prioridades";
+    }
+    .users_container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+
+        grid-template-areas: "lista_encargos lista_encargos"
+                            "lista_encargos lista_encargos"
+                            "agregar_usuario agregar_usuario";
+    }
+    .contenedor_mayor .users_modificar {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+
+        grid-template-areas: "lista_usuarios lista_usuarios"
+                             "modificar_usuarios modificar_usuarios"
+                             "agregar_usuario agregar_usuario";
+    }
+
+    .two_container {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+
+        grid-template-areas: "lista_encargos lista_encargos"
+                            "registrar_encargos registrar_encargos"
+                            "lista_calendario lista_calendario"
+                            "lista_prioridades lista_prioridades";
+    }
+    .inicio_sesion{
+        font-size: 15px;
+    }
+    .container_encargos {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+
+        grid-template-areas: "por_realizar por_realizar"
+                            "modificar_encargos modificar_encargos"
+                            "realizados realizados "
+                            "encargos_totales encargos_totales";
+    }
+
+    /* PARA CALENDARIO DE MESANJERO EN PAGINA DE ENCARGOS */
+    .msg_calendario {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "por_realizar por_realizar"
+                            "realizados realizados "
+                            "encargos_totales encargos_totales"
+                            "modificar_encargos modificar_encargos";
+    }
+}

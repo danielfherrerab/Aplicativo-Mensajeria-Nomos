@@ -1,0 +1,235 @@
+.separador_fotos {
+	background: #444;
+	color: #fff;
+	transition: transform 400ms ease-out;
+	display: inline-block;
+  min-height: 100%;
+	width: 100vw;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	line-height: 100vh;
+  top: 0;
+  left: 0;
+}
+.separador_fotos img{
+  place-items: center;
+  margin-bottom: 0;
+  max-width: 400px;
+}
+
+.carrusel_evidencia {
+  display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	white-space: nowrap;
+	background: #444;
+}
+.form{
+  display: block;
+  transition: all 2s;
+}
+input[type="radio"] {
+	position: absolute;
+}
+
+.keys {
+	position: fixed;
+	z-index: 10;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1rem;
+	color: #fff;
+	text-align: center;
+	transition: all 300ms linear;
+	opacity: 1;
+  cursor: pointer;
+}
+
+input:focus ~ .keys {
+	opacity: 0.8;
+}
+
+.carrusel_evidencia input:nth-of-type(1):checked ~ .separador_fotos:nth-of-type(1), 
+.carrusel_evidencia input:nth-of-type(2):checked ~ .separador_fotos:nth-of-type(2),
+.carrusel_evidencia input:nth-of-type(3):checked ~ .separador_fotos:nth-of-type(3){
+   z-index: 0;
+}
+
+.carrusel_evidencia input:nth-of-type(1):checked ~ .separador_fotos {
+	transform: translate3d(0, 0, 0);
+}
+
+.carrusel_evidencia input:nth-of-type(2):checked ~ .separador_fotos {
+	transform: translate3d(-100%, 0, 0);
+}
+
+.carrusel_evidencia input:nth-of-type(3):checked ~ .separador_fotos {
+	transform: translate3d(-200%, 0, 0);
+}
+
+.carrusel_evidencia input:nth-of-type(4):checked ~ .separador_fotos {
+	transform: translate3d(-300%, 0, 0);
+}
+
+.separador_fotos {
+	background: #444;
+	background-size: cover;
+	font-size: 18px;
+}
+
+.separador_fotos:before,
+.separador_fotos:after {
+	color: white;
+	display: block;
+	background: rgba(255,255,255,0.2);
+	position: absolute;
+	padding: 1rem;
+	font-size: 3rem;
+	height: 10rem;
+	vertical-align: middle;
+	line-height: 10rem;
+	top: 50%;
+	transform: translate3d(0, -50%, 0);
+	cursor: pointer;
+}
+
+.separador_fotos:before {
+	content: "\276D";
+	right: 100%;
+	border-top-left-radius: 50%;
+	border-bottom-left-radius: 50%;
+}
+
+.separador_fotos:after {
+	content: "\276C";
+	left: 100%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+}
+
+
+
+
+
+.divisor_fotos {
+	background: #444;
+	color: #fff;
+	transition: transform 400ms ease-out;
+	display: inline-block;
+  min-height: 100%;
+	width: 100vw;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	line-height: 100vh;
+  top: 0;
+  left: 0;
+}
+.divisor_fotos img{
+  place-items: center;
+  margin-bottom: 0;
+	width: 90%;
+  max-width: 800px;
+}
+
+.carrusel_allencargos {
+  display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	white-space: nowrap;
+	background: rgb(255, 164, 164);
+}
+.ver_fotos{
+	z-index: 100;
+  display: block;
+  transition: all 2s;
+}
+input[type="radio"] {
+	position: absolute;
+}
+
+.keys {
+	position: fixed;
+	z-index: 10;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1rem;
+	color: #fff;
+	text-align: center;
+	transition: all 300ms linear;
+	opacity: 1;
+  cursor: pointer;
+}
+
+input:focus ~ .keys {
+	opacity: 0.8;
+}
+
+.carrusel_allencargos input:nth-of-type(1):checked ~ .divisor_fotos:nth-of-type(1), 
+.carrusel_allencargos input:nth-of-type(2):checked ~ .divisor_fotos:nth-of-type(2),
+.carrusel_allencargos input:nth-of-type(3):checked ~ .divisor_fotos:nth-of-type(3){
+   z-index: 0;
+}
+
+.carrusel_allencargos input:nth-of-type(1):checked ~ .divisor_fotos {
+	transform: translate3d(0, 0, 0);
+}
+
+.carrusel_allencargos input:nth-of-type(2):checked ~ .divisor_fotos {
+	transform: translate3d(-100%, 0, 0);
+}
+
+.carrusel_allencargos input:nth-of-type(3):checked ~ .divisor_fotos {
+	transform: translate3d(-200%, 0, 0);
+}
+
+.carrusel_allencargos input:nth-of-type(4):checked ~ .divisor_fotos {
+	transform: translate3d(-300%, 0, 0);
+}
+
+.divisor_fotos {
+	background: #444;
+	background-size: cover;
+	font-size: 18px;
+}
+
+.divisor_fotos:before,
+.divisor_fotos:after {
+	color: white;
+	display: block;
+	background: rgba(255,255,255,0.2);
+	position: absolute;
+	padding: 1rem;
+	font-size: 3rem;
+	height: 10rem;
+	vertical-align: middle;
+	line-height: 10rem;
+	top: 50%;
+	transform: translate3d(0, -50%, 0);
+	cursor: pointer;
+}
+
+.divisor_fotos:before {
+	content: "\276D";
+	right: 100%;
+	border-top-left-radius: 50%;
+	border-bottom-left-radius: 50%;
+}
+
+.divisor_fotos:after {
+	content: "\276C";
+	left: 100%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+}

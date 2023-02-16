@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/carrusel.css">
+  <script src="../../assets/js/jquery-3.0.0.min.js"></script>
+  <script src="../../assets/js/jquery-3.0.0.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <form action="#" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <input type="hidden" name="accept_id" id="accept_id">
+      <legend>Descripcion del encargo</legend>
+      <textarea  name="accept_descripcion" id="accept_descripcion" required minlength="5" readonly></textarea>
+    </fieldset>
+    <fieldset>
+      <legend>Estado actual</legend>
+      <input type="text" name="accept_estado" id="accept_estado" value="" readonly>
+    </fieldset>
+    <fieldset>
+      <legend>Cargar foto de evidencia</legend>
+      <p>Puede subir una o hasta 3 fotos en caso de que el estado sea completado</p>
+      <input type="file" name="foto_evide" id="foto_opc1" accept="image/*" >
+      <input type="button" name="foto_evide2" id="foto_opc2" accept="image/*" class="foto_opcional" value="+">
+      <input type="button" name="foto_evide3" id="foto_opc3" accept="image/*" class="foto_opcional" value="+">
+      <input type="button" onclick="ver()" value="mostrar_foto">
+    </fieldset>
+    <div class="carrusel_evidencia">
+
+      <input type="radio" name="fancy" autofocus value="clubs" id="clubs" />
+      <input type="radio" name="fancy" value="hearts" id="hearts" />
+      <input type="radio" name="fancy" value="spades" id="spades" />
+
+      <label for="clubs" class="separador_fotos"><img id="imagenPrevisualizacion1"  class="temporal"></label><label for="hearts" class="separador_fotos"><img id="imagenPrevisualizacion2"  class="temporal"></label><label for="spades" class="separador_fotos"><img id="imagenPrevisualizacion3" class="temporal"></label>
+
+      <div class="keys" onclick="quitarEvidencias()">Salir</div>
+    </div>
+    <fieldset>
+      <legend>Observacion</legend>
+      <textarea  name="accept_obser" id="accept_obser" minlength="5" placeholder="Observacion opcional"></textarea>
+    </fieldset>
+    <div class="btn_registrarEnc">
+      <input type="submit" value="COMPLETAR" name="completar_encargo">
+    </div>
+  </form>
+
+  <script>
+    function ver(){
+      $(".carrusel_evidencia").addClass("form");
+    }
+    function quitarEvidencias(){
+      $(".carrusel_evidencia").toggleClass("form");
+    }
+  </script>
+</body>
+</html>
