@@ -1,5 +1,5 @@
 <?php
-	include_once 'conexion/conexion.php';
+	include_once '../bd/conexion.php';
 	session_start();
 	if(!$_SESSION){
 	header('location: index.php');
