@@ -281,8 +281,6 @@
           else{
             echo "<script> alert('No se pudo registrar'); window.location.href ='usuarios.php';</script>";
           }
-        }else{
-          echo "<script> alert('Deben concidir las dos contraseñas'); javascript:window.location='usuarios.php;</script>";
         }
       if((isset($_POST['modificar_usuario'])) and (isset($_POST['modi_precontraseña']) != "")){
         $new_name = $_POST['modi_nombre'];
@@ -298,9 +296,7 @@
           else{
             echo "<script> alert('No se pudo registrar'); window.location.href ='usuarios.php';</script>";
           }
-        }else{
-          echo "<script> alert('Deben concidir las dos contraseñas'); javascript:window.location='usuarios.php;</script>";
-      }
+        }
 
 
       /*ASIGNAR MENSAJERO A USUARIOS */
