@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-</head>
-<body>
-
 <?php
   if (isset($_SESSION['Id_rol'])){
     switch($_SESSION['Id_rol']) {
@@ -21,6 +13,3 @@
       header('Location: ../index.php');
   }
 ?>
-
-</body>
-</html>

@@ -1,3 +1,37 @@
+<?php
+  include_once '../bd/conexion.php';
+  session_start();
+  $Rol = $_SESSION['Id_rol'];
+  if(!isset($_SESSION['Id_rol'])){
+    header('location: ../index.php');
+  }
+  else {
+    if ($_SESSION['Id_rol'] == 3) {
+      header('location: ../index.php');
+    }
+  }
+
+  $id_usuario = $_SESSION['Id_usuario'];
+  $nombre_usuario = $_SESSION['Nombre_usuario'];
+
+  date_default_timezone_set("America/Bogota");
+  setlocale(LC_ALL,"es_ES");
+  $fecha_inicio   = date('Y-m-d 00:00:00');
+  $fecha_hoy      = date("Y-m-d H:i:s");
+  $fecha_despues 	= date("Y-m-d 23:59:59",strtotime($fecha_hoy."+ 1 day,"));
+  $i = 0;
+
+  if(isset($_GET['registrado'])) {
+    echo "<div class='registrado'>Se ha registrado correctamente </div>";
+  }
+
+  if(isset($_GET['cambiado'])) {
+    echo "<div class='registrado'>Se ha cambiado de estado </div>";
+  }
+  
+
+  $meses = ['Default','Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -16,40 +50,6 @@
 
   </head>
   <body>
-    <?php
-      include_once '../bd/conexion.php';
-      session_start();
-      $Rol = $_SESSION['Id_rol'];
-      if(!isset($_SESSION['Id_rol'])){
-        header('location: ../index.php');
-      }
-      else {
-        if ($_SESSION['Id_rol'] == 3) {
-          header('location: ../index.php');
-        }
-      }
-
-      $id_usuario = $_SESSION['Id_usuario'];
-      $nombre_usuario = $_SESSION['Nombre_usuario'];
-
-			date_default_timezone_set("America/Bogota");
-			setlocale(LC_ALL,"es_ES");
-      $fecha_inicio   = date('Y-m-d 00:00:00');
-			$fecha_hoy      = date("Y-m-d H:i:s");
-      $fecha_despues 	= date("Y-m-d 23:59:59",strtotime($fecha_hoy."+ 1 day,"));
-      $i = 0;
-
-      if(isset($_GET['registrado'])) {
-        echo "<div class='registrado'>Se ha registrado correctamente </div>";
-      }
-
-      if(isset($_GET['cambiado'])) {
-        echo "<div class='registrado'>Se ha cambiado de estado </div>";
-      }
-      
-
-      $meses = ['Default','Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-    ?>
     <div class="contenedor_mayor">
         <div class="nav_superior">
             <div class="hamburger">

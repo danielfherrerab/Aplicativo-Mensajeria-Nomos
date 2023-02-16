@@ -1,3 +1,47 @@
+<?php
+  include_once '../bd/conexion.php';
+
+  session_start();
+  if(!isset($_SESSION['Id_rol'])){
+    header('location: ../index.php');
+  }
+  else{
+    if($_SESSION['Id_rol'] !=1){
+      header('location: ../index.php');
+    }
+  }
+  $Rol = $_SESSION['Id_rol'];
+  $id_usuario = $_SESSION['Id_usuario'];
+  $nombre_usuario = $_SESSION['Nombre_usuario'];
+
+  date_default_timezone_set("America/Bogota");
+  setlocale(LC_ALL,"es_ES");
+  $fecha_inicio   = date('Y-m-d 00:00:00');
+  $final_dia   = date('Y-m-d 23:59:59');
+  $fecha_hoy      = date("Y-m-d H:i:s");
+  $solofecha_hoy      = date("Y-m-d");
+  $fecha_despues 	= date("Y-m-d 23:59:59",strtotime($fecha_hoy."+ 1 day,"));
+
+  if(isset($_GET['encarg'])) {
+    $num_enc = $_GET['encarg'];
+    $cam__estado = $_GET['est'];
+    $rectificar = mysqli_query($conexion,"UPDATE encargos set estado = '$cam__estado',fecha_completado = '$fecha_hoy' where id_encargo = $num_enc");
+
+    if($rectificar){
+      echo "<script> alert('Se cambio de estado'); window.location.href ='principal_adt.php'; </script>";
+    }
+  }
+  if(isset($_GET['registrado'])) {
+    echo "<div class='registrado'>Se ha registrado correctamente </div>";
+  }
+  $SqlEventos   = ("SELECT * FROM encargos inner join usuarios on usuarios.id_usuario = encargos.Id_mensajero");
+  $resulEventos = mysqli_query($conexion, $SqlEventos);
+
+  require_once('extensiones/app/Database.php');
+  require_once('extensiones/app/Tarea.php');
+
+  $tareas = (new Tarea())->getTareas();
+?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -9,52 +53,6 @@
     <link rel="stylesheet" href="../assets/css/carrusel.css">
     <link rel="stylesheet" type="text/css" href="extensiones/TablaAdvance/css/dataTables.jqueryui.css"/>
     <title>Administrador</title>
-
-  <?php
-    include_once '../bd/conexion.php';
-
-    session_start();
-    if(!isset($_SESSION['Id_rol'])){
-      header('location: ../index.php');
-    }
-    else{
-      if($_SESSION['Id_rol'] !=1){
-        header('location: ../index.php');
-      }
-    }
-    $Rol = $_SESSION['Id_rol'];
-    $id_usuario = $_SESSION['Id_usuario'];
-    $nombre_usuario = $_SESSION['Nombre_usuario'];
-
-    date_default_timezone_set("America/Bogota");
-    setlocale(LC_ALL,"es_ES");
-    $fecha_inicio   = date('Y-m-d 00:00:00');
-    $final_dia   = date('Y-m-d 23:59:59');
-    $fecha_hoy      = date("Y-m-d H:i:s");
-    $solofecha_hoy      = date("Y-m-d");
-    $fecha_despues 	= date("Y-m-d 23:59:59",strtotime($fecha_hoy."+ 1 day,"));
-
-    if(isset($_GET['encarg'])) {
-      $num_enc = $_GET['encarg'];
-      $cam__estado = $_GET['est'];
-      $rectificar = mysqli_query($conexion,"UPDATE encargos set estado = '$cam__estado',fecha_completado = '$fecha_hoy' where id_encargo = $num_enc");
-
-      if($rectificar){
-        echo "<script> alert('Se cambio de estado'); window.location.href ='principal_adt.php'; </script>";
-      }
-    }
-    if(isset($_GET['registrado'])) {
-      echo "<div class='registrado'>Se ha registrado correctamente </div>";
-    }
-    $SqlEventos   = ("SELECT * FROM encargos inner join usuarios on usuarios.id_usuario = encargos.Id_mensajero");
-    $resulEventos = mysqli_query($conexion, $SqlEventos);
-
-    require_once('extensiones/app/Database.php');
-    require_once('extensiones/app/Tarea.php');
-
-    $tareas = (new Tarea())->getTareas();
-  ?>
-
 </head>
 
 <body>

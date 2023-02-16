@@ -1,3 +1,45 @@
+<?php
+  include_once '../bd/conexion.php';
+  session_start();
+  if(!isset($_SESSION['Id_rol'])){
+    header('location: ../index.php');
+  }
+  else{
+    if($_SESSION['Id_rol'] !=3){
+      header('location: ../index.php');
+    }
+  }
+  $i = 0;
+  $Rol = $_SESSION['Id_rol'];
+  $id_usuario = $_SESSION['Id_usuario'];
+  $nombre_usuario = $_SESSION['Nombre_usuario'];
+
+  date_default_timezone_set("America/Bogota");
+  setlocale(LC_ALL,"es_ES");
+  $fecha_inicio   = date('Y-m-d 00:00:00');
+  $final_dia   = date('Y-m-d 23:59:59');
+  $fecha_hoy      = date("Y-m-d H:i:s");
+  $fecha_despues 	= date("Y-m-d 23:59:59",strtotime($fecha_hoy."+ 1 day,"));
+
+  if(isset($_GET['encarg'])) {
+    $num_enc = $_GET['encarg'];
+    $cam__estado = $_GET['est'];
+
+    $rectificar = mysqli_query($conexion,"UPDATE encargos set estado = '$cam__estado',fecha_completado = '$fecha_hoy' where id_encargo = $num_enc");
+
+    if($rectificar){
+      echo "<script> alert('Se cambio de estado'); window.location.href ='principal_msg.php'; </script>";
+    }
+  }
+
+  if(isset($_GET['cambiado'])) {
+    echo "<div class='registrado'>Se ha cambiado de estado </div>";
+  }
+
+
+  $SqlEventos   = ("SELECT * FROM encargos where id_mensajero = $id_usuario");
+  $resulEventos = mysqli_query($conexion, $SqlEventos);
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -12,49 +54,6 @@
   </head>
   <body>
 		<div class="loading" id="loading"><div class="cargador"></div></div>
-    <?php
-      include_once '../bd/conexion.php';
-      session_start();
-      if(!isset($_SESSION['Id_rol'])){
-        header('location: ../index.php');
-      }
-      else{
-        if($_SESSION['Id_rol'] !=3){
-          header('location: ../index.php');
-        }
-      }
-      $i = 0;
-      $Rol = $_SESSION['Id_rol'];
-      $id_usuario = $_SESSION['Id_usuario'];
-      $nombre_usuario = $_SESSION['Nombre_usuario'];
-
-      date_default_timezone_set("America/Bogota");
-      setlocale(LC_ALL,"es_ES");
-      $fecha_inicio   = date('Y-m-d 00:00:00');
-      $final_dia   = date('Y-m-d 23:59:59');
-      $fecha_hoy      = date("Y-m-d H:i:s");
-      $fecha_despues 	= date("Y-m-d 23:59:59",strtotime($fecha_hoy."+ 1 day,"));
-
-      if(isset($_GET['encarg'])) {
-        $num_enc = $_GET['encarg'];
-        $cam__estado = $_GET['est'];
-
-        $rectificar = mysqli_query($conexion,"UPDATE encargos set estado = '$cam__estado',fecha_completado = '$fecha_hoy' where id_encargo = $num_enc");
-
-        if($rectificar){
-          echo "<script> alert('Se cambio de estado'); window.location.href ='principal_msg.php'; </script>";
-        }
-      }
-
-      if(isset($_GET['cambiado'])) {
-        echo "<div class='registrado'>Se ha cambiado de estado </div>";
-      }
-
-
-      $SqlEventos   = ("SELECT * FROM encargos where id_mensajero = $id_usuario");
-      $resulEventos = mysqli_query($conexion, $SqlEventos);
-    ?>
-
     <div class="contenedor_mayor">
         <div class="nav_superior">
             <div class="hamburger">

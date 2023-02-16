@@ -1,3 +1,27 @@
+<?php
+	include_once 'bd/conexion.php';
+	date_default_timezone_set("America/Bogota");
+	setlocale(LC_ALL,"es_ES");
+	// $dia = date('Y-m-01 H:i:s');
+	// $fecha = date("Y-m-d H:i:s");
+	session_start();
+	if (isset($_GET['close_login'])){
+		session_unset();
+		unset($_SESSION["Id_usuario"]);
+		session_destroy();//header('Location:../login.php');
+		echo "<script> window.location.href ='index.php';</script>";
+	}
+	if (isset($_SESSION['Id_rol'])){
+		switch($_SESSION['Id_rol']) {
+			case 1:
+				header('Location: web/principal_adt.php');		break;
+			case 2:
+				header('Location: web/principal_enc.php');			break;
+			case 3:
+				header('Location: web/principal_msg.php');			break;
+		}
+	}
+?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -6,47 +30,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="assets/css/style.css">
 		<title>Iniciar sesion</title>
-	</head>
+  	</head>
 
-    <?php
-      include_once 'bd/conexion.php';
-        date_default_timezone_set("America/Bogota");
-        setlocale(LC_ALL,"es_ES");
-        // $dia = date('Y-m-01 H:i:s');
-        // $fecha = date("Y-m-d H:i:s");
-      session_start();
-      if (isset($_GET['close_login'])){
-        session_unset();
-        unset($_SESSION["Id_usuario"]);
-        session_destroy();//header('Location:../login.php');
-        echo "<script> window.location.href ='index.php';</script>";
-      }
-			if (isset($_SESSION['Id_rol'])){
-				switch($_SESSION['Id_rol']) {
-					case 1:
-						header('Location: web/principal_adt.php');		break;
-					case 2:
-						header('Location: web/principal_enc.php');			break;
-					case 3:
-						header('Location: web/principal_msg.php');			break;
-				}
-			}
-    ?>
-  </head>
-  <body>
+  	<body>
 		<div class="loading" id="loading"><div class="cargador"></div></div>
     <div class="logo_superior"></div>
 		<div class="inicio_sesion">
 			<h1>Iniciar Sesion</h1>
 			<fieldset>
                 <legend>Ingreso de datos</legend>
-                <p style="font-size: 13px; text-align: center">
-                Administrador <br>
-                admin@admin.com<br>
-                123456Aa<br>
-                Mensajero:<br>
-                juan@gmail.com<br>
-                123456Aa</p>
 				<form action="" method="POST">
 					<h3>Digite su correo electronico</h3>
 					<input type="email" placeholder="Ingrese su correo electronico" name="correo_usuario" required class="btn_texto"><br><br>

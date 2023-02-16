@@ -1,6 +1,27 @@
+<?php
+  include_once '../bd/conexion.php';
+  session_start();
+  if(!isset($_SESSION['Id_rol'])){
+    header('location: ../index.php');
+  }
+  else{
+    if($_SESSION['Id_rol'] !=1){
+      header('location: ../index.php');
+    }
+  }
+  $Rol = $_SESSION['Id_rol'];
+  $id_usuario = $_SESSION['Id_usuario'];
+  $nombre_usuario = $_SESSION['Nombre_usuario'];
+
+  date_default_timezone_set("America/Bogota");
+  setlocale(LC_ALL,"es_ES");
+  $fecha_inicio   = date('Y-m-d 00:00:00');
+  $fecha_hoy      = date("Y-m-d H:i:s");
+  $fecha_despues 	= date("Y-m-d 23:59:59",strtotime($fecha_hoy."+ 1 day,"));
+?>
 <!doctype html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,30 +30,9 @@
     <script src="../assets/js/jquery-3.0.0.min.js"></script>
     <title>Usuarios</title>
   </head>
+
   <body>
-    <?php
-      include_once '../bd/conexion.php';
-      session_start();
-      if(!isset($_SESSION['Id_rol'])){
-        header('location: ../index.php');
-      }
-      else{
-        if($_SESSION['Id_rol'] !=1){
-          header('location: ../index.php');
-        }
-      }
-      $Rol = $_SESSION['Id_rol'];
-      $id_usuario = $_SESSION['Id_usuario'];
-      $nombre_usuario = $_SESSION['Nombre_usuario'];
-
-			date_default_timezone_set("America/Bogota");
-			setlocale(LC_ALL,"es_ES");
-      $fecha_inicio   = date('Y-m-d 00:00:00');
-			$fecha_hoy      = date("Y-m-d H:i:s");
-      $fecha_despues 	= date("Y-m-d 23:59:59",strtotime($fecha_hoy."+ 1 day,"));
-    ?>
-
-<div class="contenedor_mayor">
+    <div class="contenedor_mayor">
     <div class="nav_superior">
         <div class="hamburger">
             <div class="one"></div>
