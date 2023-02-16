@@ -37,7 +37,10 @@
   $SqlEventos   = ("SELECT * FROM encargos inner join usuarios on usuarios.id_usuario = encargos.Id_mensajero");
   $resulEventos = mysqli_query($conexion, $SqlEventos);  
 
+  require_once('extensiones/app/Database.php');
+  require_once('extensiones/app/Tarea.php');
 
+  $tareas = (new Tarea())->getTareas();
 ?>
 <!doctype html>
 <html lang="es">

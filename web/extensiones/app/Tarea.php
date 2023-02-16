@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 class Tarea extends Database{
 	public function __construct() {
