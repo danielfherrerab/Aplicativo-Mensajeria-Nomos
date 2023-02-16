@@ -64,10 +64,10 @@
 								$password = $_POST['clave_usuario'];
 								
 								$query 		= mysqli_query($conexion,"SELECT * FROM usuarios WHERE correo_usuario = '$username'");
-								while($arreglofila = mysqli_fetch_array($query)){
 								
-								if ($arreglofila == true) {
-									$Rol					= $arreglofila[4];
+								
+								if ($row == true) {
+									$Rol					= $row[4];
 									$_SESSION['Id_rol'] = $Rol;
 
 									switch($Rol) {
@@ -79,11 +79,11 @@
 											echo '<script> window.location.href = "web/principal_msg.php"; </script>';		break;
 									}
 
-									$id_usuario						= $arreglofila[0];
+									$id_usuario						= $row[0];
 									$_SESSION['Id_usuario'] 		= $id_usuario;
-									$correo_usuario 				= $arreglofila[2];
+									$correo_usuario 				= $row[2];
 									$_SESSION['Correo_usuario'] 	= $correo_usuario;
-									$nombre_usuario 				= $arreglofila[1];
+									$nombre_usuario 				= $row[1];
 									$_SESSION['Nombre_usuario'] 	= $nombre_usuario;
 									echo $correo_usuario;
 
@@ -91,7 +91,6 @@
 								else{
 									echo "<div class='msg_erroneo'>El usuario puede que no exista o el correo electronico o la contraseña es invalida!</div>";
 								}
-							}
 							}
 						}  
 						else  {  
