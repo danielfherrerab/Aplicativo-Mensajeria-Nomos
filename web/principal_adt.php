@@ -594,41 +594,40 @@
 
                 $(".modal").toggleClass("show_modal");
             },
+          });
+
+          setTimeout(function () {
+              $(".alert").slideUp(300);
+          }, 3000);
+
         });
 
+        $('#tabla_prioridad').dataTable( {
+            "language": {"sProcessing":     "Procesando...","sLengthMenu":     "Mostrar _MENU_ registros","sZeroRecords":    "No se encontraron resultados","sEmptyTable":     "Ningún dato disponible en esta tabla","sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros","sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros","sInfoFiltered":   "(filtrado de un total de _MAX_ registros)","sInfoPostFix":    "","sSearch":         "Buscar registro: ","sUrl":            "","sInfoThousands":  ",","sLoadingRecords": "Cargando...","oPaginate": {"sFirst":    "Primero","sLast":     "Último","sNext":     "Siguiente","sPrevious": "Anterior" },"oAria": { "sSortAscending":  ": Activar para ordenar la columna de manera ascendente", "sSortDescending": ": Activar para ordenar la columna de manera descendente" }}
+        } );
 
-        setTimeout(function () {
-            $(".alert").slideUp(300);
-        }, 3000);
+        function cmb_estado(verencargo){
+          var id = $(verencargo).data("id");
+          var cod = document.getElementById(id).value;
 
-    });
+          var combo = document.getElementById(id);
+          var selected = combo.options[combo.selectedIndex].text;
+          var descripcion = document.getElementById("conf_descripcion"+id).value;
 
-    $('#tabla_prioridad').dataTable( {
-        "language": {"sProcessing":     "Procesando...","sLengthMenu":     "Mostrar _MENU_ registros","sZeroRecords":    "No se encontraron resultados","sEmptyTable":     "Ningún dato disponible en esta tabla","sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros","sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros","sInfoFiltered":   "(filtrado de un total de _MAX_ registros)","sInfoPostFix":    "","sSearch":         "Buscar registro: ","sUrl":            "","sInfoThousands":  ",","sLoadingRecords": "Cargando...","oPaginate": {"sFirst":    "Primero","sLast":     "Último","sNext":     "Siguiente","sPrevious": "Anterior" },"oAria": { "sSortAscending":  ": Activar para ordenar la columna de manera ascendente", "sSortDescending": ": Activar para ordenar la columna de manera descendente" }}
-    } );
-
-    function cmb_estado(verencargo){
-            var id = $(verencargo).data("id");
-            var cod = document.getElementById(id).value;
-
-            var combo = document.getElementById(id);
-            var selected = combo.options[combo.selectedIndex].text;
-            var descripcion = document.getElementById("conf_descripcion"+id).value;
-
-            if(selected == "completado"){
-              $("#lista_enc").addClass("show_confirmacion");
-              $("#1_reprogramar").removeClass("show_confirmacion");
-            }
-            else{
-              $("#lista_enc").removeClass("show_confirmacion");
-              $("#1_reprogramar").addClass("show_confirmacion");
-              $('input[name=repro_id').val(id);
-              $('input[name=repro_descripcion').val(descripcion);
-              $('input[name=repro_estado').val(selected);
-            }
-            $('input[name=accept_id').val(id);
-            $('textarea[name=accept_descripcion').val(descripcion);
-            $('input[name=accept_estado').val(selected);
+          if(selected == "completado"){
+            $("#lista_enc").addClass("show_confirmacion");
+            $("#1_reprogramar").removeClass("show_confirmacion");
+          }
+          else{
+            $("#lista_enc").removeClass("show_confirmacion");
+            $("#1_reprogramar").addClass("show_confirmacion");
+            $('input[name=repro_id').val(id);
+            $('textarea[name=repro_descripcion').val(descripcion);
+            $('input[name=repro_estado').val(selected);
+          }
+          $('input[name=accept_id').val(id);
+          $('textarea[name=accept_descripcion').val(descripcion);
+          $('input[name=accept_estado').val(selected);
 
         }
         function ver(){
@@ -666,6 +665,6 @@
         function oct_estado(){
             $(".list_enc").removeClass("show_confirmacion");
         }
-</script>
+      </script>
 </body>
 </html>

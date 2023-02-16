@@ -216,7 +216,7 @@
                                     <td><?php echo $estado; ?></td>
                                     <td class="justify"><?php echo $descripcion; ?></td>
                                     <td><?php echo $mensajero; ?></td>
-                                    <td nowrap="2"><?php echo date("d",strtotime($fec_requerida))." / ".$meses[date("m",strtotime($fec_requerida))]." / ".date("Y",strtotime($fec_requerida)); ?></td>
+                                    <td nowrap="2"><?php echo date("d",strtotime($fec_requerida))." / ".$meses[date("n",strtotime($fec_requerida))]." / ".date("Y",strtotime($fec_requerida)); ?></td>
                                     <td nowrap="2"><?php echo $dia_reali."  ".$meses[$mes_reali]."  ".$year_reali; ?></td>
                                     <td class="justify"><?php echo $observacion; ?></td>
                                     <td class="justify"><button onclick="mostrarfoto(this)" data-id="<?php echo $i; ?>">Ver foto</button>
