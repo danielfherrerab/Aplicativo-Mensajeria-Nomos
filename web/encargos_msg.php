@@ -661,14 +661,14 @@
 
 
         $("#open_notificacion").click(function(){
-            var myVar = setInterval(ciclo, 5000);
+            var myVar = setInterval(ciclo, 3500);
 
             if( $( ".tabla_notificacion" ).hasClass( "mostrar_notificacion" ) ) {
-                var myVar = setInterval(ciclo, 5000);
+                var myVar = setInterval(ciclo, 3500);
                 $(".tabla_notificacion").toggleClass("mostrar_notificacion");
             }
             else{
-                var myVar = setInterval(ciclo, 4000);
+                var myVar = setInterval(ciclo, 2000);
                 function ciclo() {
                     $.get("notificacion/api.php", function (data) {
                         const prueba = JSON.parse(data);
