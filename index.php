@@ -52,7 +52,7 @@
 			if (isset($_POST['correo_usuario']) && isset($_POST['clave_usuario'])) {
 				$username = mysqli_real_escape_string($conexion, $_POST["correo_usuario"]);
 				$password = mysqli_real_escape_string($conexion, $_POST["clave_usuario"]);  
-				$query = "SELECT * FROM Usuarios WHERE correo_usuario = '$username'";  
+				$query = "SELECT * FROM usuarios WHERE correo_usuario = '$username'";  
 				$result = mysqli_query($conexion, $query); 
 
 				if(mysqli_num_rows($result) >= 1)  
